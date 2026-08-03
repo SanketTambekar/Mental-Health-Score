@@ -4,7 +4,7 @@ import joblib
 from pydantic import BaseModel,Field
 from typing import Literal
 from fastapi.middleware.cors import CORSMiddleware
-model = joblib.load("Meantal_Health_Model.pkl")
+model = joblib.load("Mental_Health_Model.pkl")
 app=FastAPI()
 # a first pydantic model
 app.add_middleware(
