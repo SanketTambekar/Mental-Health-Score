@@ -4,17 +4,12 @@ import joblib
 from pydantic import BaseModel,Field
 from typing import Literal
 from fastapi.middleware.cors import CORSMiddleware
-model=joblib.load(r"C:\Users\HP\Desktop\mental halth\Meantal_Health_Model.pkl")
+model=joblib.load(r"C:\Users\HP\Desktop\python\python1\Meantal_Health_Model.pkl")
 app=FastAPI()
 # a first pydantic model
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:63342",
-        "http://127.0.0.1:63342",
-        "http://localhost:5500",
-        "http://127.0.0.1:5500",
-    ],
+    allow_origins=["*"],  # For development
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
